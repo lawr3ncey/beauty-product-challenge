@@ -58,13 +58,13 @@ npm run build
 
 Here are some screenshots of the project:
 
-![Hero Slide 1](public/screenshots/Screenshot 2025-09-03 091824.png)
-![Hero Slide 2](public/screenshots/Screenshot 2025-09-03 092027.png)
-![Hero Slide 3](public/screenshots/Screenshot 2025-09-03 092057.png)
+![Hero Slide 1](public/screenshots/slide1.png)
+![Hero Slide 2](public/screenshots/slide2.png)
+![Hero Slide 3](public/screenshots/slide3.png)
 
-![Hero Slide 1(Mobile)](public/screenshots/Screenshot 2025-09-04 163241.png)
-![Hero Slide 2(Mobile)](public/screenshots/Screenshot 2025-09-04 163200.png)
-![Hero Slide 3(Mobile)](public/screenshots/Screenshot 2025-09-04 165854.png)
+![Hero Slide 1(Mobile)](public/screenshots/slide1-mobile.png)
+![Hero Slide 2(Mobile)](public/screenshots/slide2-mobile.png)
+![Hero Slide 3(Mobile)](public/screenshots/slide3-mobile.png)
 
 📌 Notes
 
