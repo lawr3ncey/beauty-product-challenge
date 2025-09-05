@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Beauty Products Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A **3D animated product showcase** built with React and Swiper.  
+This project was developed as part of a coding challenge and focuses on smooth animations, responsive design, and an engaging hero slider experience.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Features
+- 🎞️ **3D Animation on Scroll** – Center product image smoothly transitions between slides (slides down → next slide slides up).  
+- 📱 **Mobile Responsive Design** – Product image, title, and effects adjust neatly for smaller screens.  
+- 🎨 **Floating Foreground Effects** – Decorative petals/splashes animated for added visual appeal.  
+- 🖼️ **Hero Slider** – Fullscreen sections with dynamic background, text, and CTA button.  
+- 🍔 **Responsive Header** – Clean navigation with a hamburger menu on mobile.  
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack
+- **React** (UI components)  
+- **Swiper.js** (slider & scroll interactions)  
+- **CSS3 / Flexbox** (responsive layout & animations)  
+- **JavaScript ES6+**  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📂 Project Structure
+beauty-products-challenge/
+├── public/ # Static assets (images, icons, etc.)
+├── src/
+│ ├── components/ # Reusable components (Header, HeroSlider, etc.)
+│ ├── styles/ # CSS styles
+│ ├── App.js # Root app component
+│ └── index.js # Entry point
+├── package.json
+└── README.md
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone the repository
+```bash
+git clone https://github.com/<your-username>/beauty-products-challenge.git
+cd beauty-products-challenge
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Install dependencies
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Run the development server
+npm start
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Project will be available at http://localhost:3000
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4. Build for production
+npm run build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📸 Demo Preview
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Here are some screenshots of the project:
 
-## Learn More
+![Hero Slide 1](public/screenshots/Screenshot 2025-09-03 091824.png)
+![Hero Slide 2](public/screenshots/Screenshot 2025-09-03 092027.png)
+![Hero Slide 3](public/screenshots/Screenshot 2025-09-03 092057.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Hero Slide 1(Mobile)](public/screenshots/Screenshot 2025-09-04 163241.png)
+![Hero Slide 2(Mobile)](public/screenshots/Screenshot 2025-09-04 163200.png)
+![Hero Slide 3(Mobile)](public/screenshots/Screenshot 2025-09-04 165854.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📌 Notes
 
-### Code Splitting
+Designed to showcase animation & responsiveness for beauty products.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Works on modern browsers and devices.
 
-### Analyzing the Bundle Size
+Easily customizable: update slides array in HeroSlider.js to change images/text.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+👤 Author
 
-### Making a Progressive Web App
+Developed by Lawrence Babelonia - babelonialawrence@gmail.com
+For challenge submission & portfolio purposes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+👉 **live deployment link section** 
