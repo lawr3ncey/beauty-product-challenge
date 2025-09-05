@@ -121,7 +121,7 @@ const HeroSlider = () => {
                   <img src={slide.effectImage} alt="Effect splash 2" className="petal-exit" />
                 </div>
 
-                {/* Title */}
+                 {/* Title */}
                 <h1 className="hero-title z-10">{slide.title}</h1>
 
                 {/* Product Image */}

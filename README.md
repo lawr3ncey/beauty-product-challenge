@@ -87,4 +87,4 @@ For challenge submission & portfolio purposes.
 
 ---
 
-👉 **live deployment link section** 
+👉 **https://3d-beauty-product.netlify.app/** 
