@@ -36,34 +36,33 @@ const Header = () => {
             />
           </a>
 
-
-         <nav className={`main-nav ${menuOpen ? "open" : ""}`}>
-          <a href="/">صفحه اصلی</a>
-          <a href="/shop/">فروشگاه</a>
-          <a href="/blog/">بلاگ</a>
-          <a href="/contact-us/">تماس با ما</a>
-          <a href="/about-us/">درباره ما</a>
-        </nav>
-
+          <nav className={`main-nav ${menuOpen ? "open" : ""}`}>
+            <a href="https://roziro.com/">صفحه اصلی</a>
+            <a href="https://roziro.com/">فروشگاه</a>
+            <a href="https://roziro.com/">بلاگ</a>
+            <a href="https://roziro.com/">تماس با ما</a>
+            <a href="https://roziro.com/">درباره ما</a>
+          </nav>
         </div>
+
          {/* Overlay */}
         {menuOpen && <div className="menu-overlay show" onClick={closeMenu}></div>}
         <div className={`nav-left ${menuOpen ? "open" : ""}`}>
           
-          <a href="#" className="icon-link">
+          <a href="https://roziro.com/" className="icon-link">
             <img src="/images/search-icon.png" alt="Search" style={{ width: "33px", height: "33px" }} />
           </a>
-          <a href="/my-account/">ورود / فرم ثبت نام</a>
+          <a href="https://roziro.com/">ورود / فرم ثبت نام</a>
 
-          <a href="wishlist">
+          <a href="https://roziro.com/">
             <img src="/images/heart-icon.png" alt="Search" style={{ width: "23px", height: "23px" }} />
           </a>
 
-          <a href="/compare/">
+          <a href="https://roziro.com/">
             <img src="/images/shuffle-icon.png" alt="Search" style={{ width: "23px", height: "23px" }} />
           </a>
 
-          <a href="/cart/">
+          <a href="https://roziro.com/">
             <img src="/images/cart-icon.png" alt="Search" style={{ width: "23px", height: "23px" }} />
           </a>
 
