@@ -1,0 +1,491 @@
+.hero-swiper {
+  width: 100%;
+  height: 100vh;
+  direction: rtl; 
+}
+
+.hero-slide {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* fills screen but allows growth */
+  transition: background 1s ease; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 10;
+  color: white;
+  /* Optional text shadow for depth */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  transition: filter 0.3s ease;
+}
+
+/* Product wrapper to control layering */
+.product-wrapper {
+  position: relative;
+  z-index: 20;
+  display: inline-block;
+  margin-top: -100px;     /*pull it upwards if needed to overlap the title */
+}
+
+.hero-slide h1 {
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 100px;
+  font-weight: 900;
+  color: #ffffff;
+  text-align: center;
+  line-height: 140px;
+  padding-top: 60px;
+  position: relative;
+  z-index: 10;
+
+  /* Glowing + subtle depth */
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(255, 255, 255, 0.2),
+    2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hero-slide .product-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 20px 0;
+  z-index: 10;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.hero-slide button {
+  padding: 12px 60px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  border-radius: 9999px;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+@keyframes subtleFloat {
+  0% {
+    transform: translateY(0px) scale(1) rotateX(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: translateY(-2px) scale(1.005) rotateX(0.3deg) rotateZ(-0.2deg);
+  }
+  50% {
+    transform: translateY(-1px) scale(1.01) rotateX(0deg) rotateZ(0.2deg);
+  }
+  75% {
+    transform: translateY(-2px) scale(1.005) rotateX(-0.3deg) rotateZ(-0.2deg);
+  }
+  100% {
+    transform: translateY(0px) scale(1) rotateX(0deg) rotateZ(0deg);
+  }
+}
+
+/* Continuous floating effect (always applied) */
+.floating-product {
+  animation: subtleFloat 7s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+@keyframes floatUpDown {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* Pagination Dots Styling */
+.swiper-pagination {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.swiper-slide-active .product-img {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.swiper-slide-prev .product-img,
+.swiper-slide-next .product-img {
+  transform: scale(0.8) translateY(50px);
+  opacity: 0;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: white;
+  opacity: 0.4;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.swiper-vertical > .swiper-pagination-bullets,
+.swiper-vertical .swiper-pagination-bullets.swiper-pagination-vertical {
+  left: 75px !important;
+  right: auto !important;
+}
+
+.product-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 60px;
+  background: radial-gradient(ellipse at center, oklab(0% 0 0 / 0.25) 20%, rgba(0, 0, 0, 0.05) 70%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(12px);
+  opacity: 1.8;
+  z-index: 1;
+}
+
+.floating-container {
+  position: relative;
+  perspective: 800px;
+  padding-bottom: 60px; /* makes room for shadow below */
+}
+
+/* Floating splash/glow styles */
+.splash {
+  position: absolute;
+  z-index: 5;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none; /* Avoids accidental clicks */
+  opacity: 0.9;
+}
+
+.splash-1 {
+  top: 40%;
+  left: 40%;
+  width: 100px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.petal {
+  right: 10%;
+  bottom: 10% ;
+  position: absolute;
+  pointer-events: none;
+  animation: float 10s ease-in-out infinite;
+  opacity: 1.0;
+  z-index: 70; /* 👈 This puts it in front of product */
+}
+
+.petal, .splash {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Petals & splash size control */
+.petal img,
+.splash img {
+  max-width: 700px;
+  height: auto;
+}
+
+.splash-animate {
+  animation: burst 0.6s ease-out;
+}
+
+/* Default petal animation */
+.petal-float {
+  animation: petalFloat 10s ease-in-out infinite;
+}
+
+@keyframes petalFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+
+/* Resize and style floating-bubbles */
+.floating-bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-bubbles img {
+  width: 240px;   /* 🧼 Adjust as needed */
+  height: auto;
+  animation: bubbleRise 12s ease-in-out infinite;
+  opacity: 1.0;
+}
+
+.floating-cream {
+  position: absolute;
+  top: 20%;    /* adjust positioning */
+  left: 20%;   /* adjust positioning */
+  width: 200px;  /* make smaller area */
+  height: 200px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible; /* keep image from being cut off */
+}
+
+/* ===== ENTRANCE ANIMATION ===== */
+.petal-enter {
+  animation: petalDropIn 0.8s ease forwards;
+}
+
+@keyframes petalDropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px) scale(0.8) rotate(-15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+}
+
+/* ===== EXIT ANIMATION ===== */
+.petal-exit {
+  animation: petalFadeOut 0.5s ease forwards;
+}
+
+@keyframes petalFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.8);
+  }
+}
+
+/* Floating up and down */
+.effect-float {
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Slow spin */
+.effect-spin {
+  animation: spin 12s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Pulse / breathing effect */
+.effect-pulse {
+  animation: pulse 4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* CTA button */
+.cta-button {
+  padding: 12px 28px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  border-radius: 9999px;
+  font-weight: bold;
+  transition: 0.3s;
+  position: fixed;       /* stays even when swiper slides */
+  bottom: 40px;          /* distance from bottom */
+  left: 46.5%;             /* center horizontally */
+  z-index: 2000;         /* above swiper */
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    bottom: 20px;        /* closer to bottom */
+    left: 50%;           /* always true center */
+    transform: translateX(-50%);
+  }
+}
+
+.cta-button:hover {
+  background-color: white;
+  transform: scale(1.05);
+  color: #acaaa6;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+  .hero-slide h1 {
+    font-size: 70px;
+    line-height: 100px;
+  }
+
+  .product-wrapper {
+    margin-top: -40px;
+  }
+
+  .hero-slide .product-img {
+    max-width: 300px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .hero-slide {
+    min-height: 100vh; /* slightly smaller */
+    padding: 0px 0px;
+  }
+
+  .hero-slide h1 {
+    font-size: 40px;
+    line-height: 55px;
+    margin-bottom: 10px;
+  }
+
+  .product-wrapper {
+    margin-top: -20px; /* no heavy overlap */
+  }
+
+  .hero-slide .product-img {
+    max-width: 220px;
+  }
+
+}
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  .hero-slide h1 {
+    font-size: 52px;
+    line-height: 40px;
+  }
+
+  .hero-slide .product-img {
+    max-width: 180px;
+    height: 200px;
+  }
+
+  .hero-slide button {
+    width: 50%;
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile version */
+@media (max-width: 768px) {
+  .petal {
+    right:-145%;      /* reset right */
+    left: 20%;        /* center horizontally */
+    opacity: 1.0;     /* softer on mobile */
+  }
+}
+
+/* Very small devices */
+@media (max-width: 480px) {
+  .petal {
+    max-width: 90px;   /* even smaller */
+    bottom: 2%;        /* tuck closer to bottom */
+  }
+}
+
+/*Hide pagination bullets on mobile */
+@media (max-width: 768px) {
+  .swiper-pagination {
+    display: none !important;
+  }
+}
+
+.product-enter {
+  animation: productEnter 1.0s ease forwards;
+}
+@keyframes productEnter {
+  
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+  0% {
+    opacity: 0;
+    transform: translateY(-100vh); /* start from above the screen */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* settle in place */
+  }
+
+}
+
+.product-exit {
+  animation: productExit 0.4s linear forwards; /* fast exit */
+}
+@keyframes productExit {
+   0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(100vh) scale(0.9); /* slide fully down */
+  }
+
+	0% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	5% {
+		animation-timing-function: ease-in;
+		transform: translateY(30px);
+	}
+
+
+	38% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+}
+
+/* For entering product (slide up from top) */
+@keyframes productSlideIn {
+  50% {
+    opacity: 100;
+    transform: translateY(-1500px) scale(12.95); /* start above */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(110) scale(1);
+  }
+}
