@@ -33,10 +33,13 @@ Here are some actual screenshots from the project:
 
 ## 🛠️ Tech Stack
 
-- **React.js**
-- **Swiper.js**
-- **Tailwind CSS**
-- **Custom CSS Animations**
+- **Frontend Framework:** React.js  
+- **Styling:** CSS3 (animations, transitions)  
+- **Slider & Animations:** Swiper.js  
+- **3D & Interactive Effects:** Custom CSS keyframes, transitions, floating effects  
+- **Build Tool:** Create React App (CRA)  
+- **IDE & Tools:** Visual Studio Code, Git & GitHub Desktop  
+- **Deployment:** Netlify   
 
 ---
 
